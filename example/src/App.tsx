@@ -1,4 +1,5 @@
 import * as React from 'react';
+import * as DriveKitCore from "@react-native-drivekit/core";
 
 import { StyleSheet, View, Text } from 'react-native';
 
@@ -6,7 +7,7 @@ export default function App() {
   const [result, setResult] = React.useState<number | undefined>();
 
   React.useEffect(() => {
-    // multiply(3, 7).then(setResult);
+    DriveKitCore.setApiKey('SOMETHING')
   }, []);
 
   return (

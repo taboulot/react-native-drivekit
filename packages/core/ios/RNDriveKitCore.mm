@@ -41,9 +41,14 @@ RCT_REMAP_METHOD(getApiKey, getApiKeyWithResolve:(RCTPromiseResolveBlock)resolve
 
 RCT_REMAP_METHOD(setApiKey, setApiKeyWithKey:(NSString *)key resolve:(RCTPromiseResolveBlock)resolve reject:(RCTPromiseRejectBlock)reject)
 {
-    [self setApiKey: key];
+    [self setApiKey:key resolve:resolve reject:reject];
+}
+
+- (void)setApiKey:(NSString *)key resolve:(RCTPromiseResolveBlock)resolve reject:(RCTPromiseRejectBlock)reject {
+    [RNDriveKitCoreWrapper.shared setApiKeyWithKey:key];
     resolve(nil);
 }
+
 
 RCT_REMAP_METHOD(getUserId, getUserIdWithResolve:(RCTPromiseResolveBlock)resolve reject:(RCTPromiseRejectBlock)reject)
 {
@@ -120,11 +125,6 @@ RCT_REMAP_METHOD(composeDiagnosisMail, composeDiagnosisMailWithOptions:(NSDictio
     } else {
         reject(@"MAIL_COMPOSER_ERROR", @"CAN_SEND_MAIL_IS_FALSE", nil);
     };
-}
-
-
-- (void)setApiKey:(NSString *)key {
-    [RNDriveKitCoreWrapper.shared setApiKeyWithKey:key];
 }
 
 - (void)setUserId:(NSString *)userId {

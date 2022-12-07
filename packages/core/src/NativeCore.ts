@@ -5,7 +5,7 @@ import type { UserInfo } from './types';
 
 export interface Spec extends TurboModule {
   // getApiKey(): Promise<string>;
-  // setApiKey(key: string): Promise<void>;
+  setApiKey(key: string): Promise<void>;
   // getUserId(): Promise<string>;
   // setUserId(userId: string): Promise<void>;
   // updateUserId(userId: string): Promise<void>;

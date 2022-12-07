@@ -38,13 +38,13 @@ class DriveKitCoreModule internal constructor(context: ReactApplicationContext) 
 //  override fun getApiKey(promise: Promise){
 //    promise.resolve(DriveKit.config.apiKey)
 //  }
-//
-//    @ReactMethod
-//    override fun setApiKey(key: String, promise: Promise){
-//      DriveKit.setApiKey(key)
-//      promise.resolve(null)
-//    }
-//
+
+    @ReactMethod
+    override fun setApiKey(key: String, promise: Promise){
+      DriveKit.setApiKey(key)
+      promise.resolve(null)
+    }
+
 //    @ReactMethod
 //    override fun getUserId(promise: Promise) {
 //      promise.resolve(DriveKit.config.userId)
