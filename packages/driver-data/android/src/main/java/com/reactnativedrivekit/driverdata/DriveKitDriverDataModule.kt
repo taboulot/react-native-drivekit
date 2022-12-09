@@ -18,12 +18,12 @@ class DriveKitDriverDataModule internal constructor(context: ReactApplicationCon
     return NAME
   }
 
-//  @ReactMethod
-//  override fun reset(promise: Promise) {
-//    DriveKitDriverData.reset()
-//    promise.resolve(null)
-//  }
-//
+  @ReactMethod
+  override fun reset(promise: Promise) {
+    DriveKitDriverData.reset()
+    promise.resolve(null)
+  }
+
 //  @ReactMethod
 //  override fun deleteTrip(itinId: String, promise: Promise) {
 //    DriveKitDriverData.deleteTrip(itinId, object : TripDeleteQueryListener {

@@ -16,12 +16,12 @@ RCT_REMAP_METHOD(initialize, initializeWithResolve:(RCTPromiseResolveBlock)resol
 
 RCT_REMAP_METHOD(reset, resetCore:(RCTPromiseResolveBlock)resolve reject:(RCTPromiseRejectBlock)reject)
 {
-    [self reset];
-    resolve(nil);
+    [self reset:resolve reject:reject];
 }
 
-- (void)reset {
+- (void)reset:(RCTPromiseResolveBlock)resolve reject:(RCTPromiseRejectBlock)reject {
     [RNDriveKitDriverDataWrapper.shared reset];
+    resolve(nil);
 }
 
 RCT_REMAP_METHOD(deleteTrip, deleteTripWithId:(NSString *)itinId resolve:(RCTPromiseResolveBlock)resolve reject:(RCTPromiseRejectBlock)reject)

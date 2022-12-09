@@ -8,7 +8,7 @@ import type { WithDefault } from 'react-native/Libraries/Types/CodegenTypes';
 import type { GetTripResponse, GetTripsResponse, Route } from './types';
 
 export interface Spec extends TurboModule {
-  // reset(): Promise<void>;
+  reset(): Promise<void>;
   // deleteTrip(itinId: string): Promise<boolean>;
   // getRoute(itinId: string): Promise<Route | null>;
   // getTrip(itinId: string): Promise<GetTripResponse | null>;
@@ -21,4 +21,4 @@ export interface Spec extends TurboModule {
   // ): Promise<GetTripsResponse | null>;
 }
 
-export default TurboModuleRegistry.getEnforcing<Spec>('RNDriverData');
+export default TurboModuleRegistry.getEnforcing<Spec>('RNDriveKitDriverData');
