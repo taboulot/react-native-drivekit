@@ -123,5 +123,14 @@
         }
       ]
     ]
+  },
+  "codegenConfig": {
+    "libraries": [
+      {
+        "name": "RNDriverDataSpec",
+        "type": "modules",
+        "jsSrcsDir": "src"
+      }
+    ]
   }
 }
