@@ -67,12 +67,12 @@ class DriveKitTripAnalysisModule internal constructor(context: ReactApplicationC
 //    DriveKitTripAnalysis.cancelTrip()
 //    promise.resolve(null)
 //  }
-//
-//  @ReactMethod
-//  override fun isTripRunning(promise: Promise) {
-//    promise.resolve(DriveKitTripAnalysis.isTripRunning())
-//  }
-//
+
+  @ReactMethod
+  override fun isTripRunning(promise: Promise) {
+    promise.resolve(DriveKitTripAnalysis.isTripRunning())
+  }
+
 //  @ReactMethod
 //  override fun enableMonitorPotentialTripStart(enable: Boolean, promise: Promise) {
 //    DriveKitTripAnalysis.monitorPotentialTripStart = enable

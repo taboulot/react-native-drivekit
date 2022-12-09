@@ -8,7 +8,7 @@ export interface Spec extends TurboModule {
   // startTrip(): Promise<void>;
   // stopTrip(): Promise<void>;
   // cancelTrip(): Promise<void>;
-  // isTripRunning(): Promise<boolean>;
+  isTripRunning(): Promise<boolean>;
   // enableMonitorPotentialTripStart(enable: boolean): Promise<void>;
   // reset(): Promise<void>;
   // setStopTimeout(stopTimeout: number): Promise<void>;
@@ -18,4 +18,4 @@ export interface Spec extends TurboModule {
   // updateTripMetadata(key: string, value: string): Promise<void>;
 }
 
-export default TurboModuleRegistry.getEnforcing<Spec>('DriveKitTripAnalysis');
+export default TurboModuleRegistry.getEnforcing<Spec>('RNDriveKitTripAnalysis');

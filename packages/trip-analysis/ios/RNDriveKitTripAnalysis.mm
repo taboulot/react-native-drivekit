@@ -72,7 +72,11 @@ RCT_REMAP_METHOD(enableMonitorPotentialTripStart, enableMonitorPotentialTripStar
 
 RCT_REMAP_METHOD(isTripRunning, isTripRunningWithResolve:(RCTPromiseResolveBlock)resolve reject:(RCTPromiseRejectBlock)reject)
 {
-    NSNumber* tripRunning = [self isTripRunning];
+    [self isTripRunning:resolve reject:reject]; 
+}
+
+- (void)isTripRunning:(RCTPromiseResolveBlock)resolve reject:(RCTPromiseRejectBlock)reject {
+    NSNumber* tripRunning = [RNDriveKitTripAnalysisWrapper.shared isTripRunning];
     resolve(tripRunning);
 }
 
@@ -131,10 +135,6 @@ RCT_REMAP_METHOD(setVehicle, setVehicleWithVehicle:(NSDictionary *)vehicle resol
 
 - (void)cancelTrip {
     [RNDriveKitTripAnalysisWrapper.shared cancelTrip];
-}
-
-- (NSNumber *)isTripRunning {
-    return [RNDriveKitTripAnalysisWrapper.shared isTripRunning];
 }
 
 - (void)enableMonitorPotentialTripStart:(NSNumber *)enable {

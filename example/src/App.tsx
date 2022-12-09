@@ -1,5 +1,6 @@
 import * as React from 'react';
 import * as DriveKitCore from "@react-native-drivekit/core";
+import * as DriveKitTripAnalysis from "@react-native-drivekit/trip-analysis";
 
 import { StyleSheet, View, Text } from 'react-native';
 
@@ -8,6 +9,12 @@ export default function App() {
 
   React.useEffect(() => {
     DriveKitCore.setApiKey('SOMETHING')
+    const getIsTripRunning = async () => {
+      const isTripRunning = await DriveKitTripAnalysis.isTripRunning();
+      console.warn('Is Trip running = ', isTripRunning)
+    }
+
+    getIsTripRunning()
   }, []);
 
   return (
