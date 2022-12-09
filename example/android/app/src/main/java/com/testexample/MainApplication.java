@@ -13,6 +13,8 @@ import com.testexample.newarchitecture.MainApplicationReactNativeHost;
 import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 import com.reactnativedrivekitcore.DriveKitCoreModule;
+import com.reactnativedrivekittripanalysis.DriveKitTripAnalysisModule;
+import com.reactnativedrivekittripanalysis.RNTripNotification;
 
 public class MainApplication extends Application implements ReactApplication {
 
@@ -53,7 +55,11 @@ public class MainApplication extends Application implements ReactApplication {
   @Override
   public void onCreate() {
     super.onCreate();
-      DriveKitCoreModule.Companion.initialize(this);
+    DriveKitCoreModule.Companion.initialize(this);
+    final RNTripNotification tripNotification = new RNTripNotification("Notification title", "Notification description", R.drawable.ic_stat_name);
+    DriveKitTripAnalysisModule.Companion.initialize(tripNotification);
+    DriveKitTripAnalysisModule.Companion.registerReceiver(this);
+
     // If you opted-in for the New Architecture, we enable the TurboModule system
     ReactFeatureFlags.useTurboModules = BuildConfig.IS_NEW_ARCHITECTURE_ENABLED;
     SoLoader.init(this, /* native exopackage */ false);

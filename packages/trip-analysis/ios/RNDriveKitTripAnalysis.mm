@@ -178,7 +178,7 @@ RCT_REMAP_METHOD(setVehicle, setVehicleWithVehicle:(NSDictionary *)vehicle resol
 - (std::shared_ptr<facebook::react::TurboModule>)getTurboModule:
     (const facebook::react::ObjCTurboModule::InitParams &)params
 {
-    return std::make_shared<facebook::react::NativeDrivekitTripAnalysisSpecJSI>(params);
+    return std::make_shared<facebook::react::NativeDriveKitTripAnalysisSpecJSI>(params);
 }
 #endif
 

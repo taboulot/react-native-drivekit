@@ -1,5 +1,6 @@
 const path = require('path');
 const packCore = require('../packages/core/package.json');
+const packTripAnalysis = require('../packages/trip-analysis/package.json');
 
 module.exports = {
   presets: ['module:metro-react-native-babel-preset'],
